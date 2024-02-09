@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-alert',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertPage implements OnInit {
 
-  constructor() { }
+  constructor(private alertController: AlertController) { }
 
   ngOnInit() {
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'A Short Title Is Best',
+      subHeader: 'A Sub Header Is Optional',
+      message: 'A message should be a short, complete sentence.',
+      buttons: ['Action'],
+    });
+
+    await alert.present();
   }
 
 }
