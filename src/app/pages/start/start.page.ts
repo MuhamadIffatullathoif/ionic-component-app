@@ -27,6 +27,11 @@ export class StartPage implements OnInit {
       name: 'Avatar',
       redirectTo: '/avatar'
     },
+    {
+      icon: 'radio-button-off-outline',
+      name: 'Button',
+      redirectTo: '/button'
+    },
   ]
   constructor() { }
 
