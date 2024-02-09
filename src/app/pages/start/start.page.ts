@@ -37,6 +37,11 @@ export class StartPage implements OnInit {
       name: 'Card',
       redirectTo: '/card'
     },
+    {
+      icon: 'checkmark-circle-outline',
+      name: 'Checkbox',
+      redirectTo: '/checkbox'
+    },
   ]
   constructor() { }
 
