@@ -1,0 +1,28 @@
+<components-header title="Date Time"></components-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Birth Data</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Birthdate</ion-label>
+      <ion-datetime [value]="birthDate.toISOString()" mode="ios"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Min Max</ion-label>
+      <ion-datetime [value]="birthDate.toISOString()" [min]="birthDate.toISOString()" [max]="max.toISOString()"
+        (ionChange)="changeDate($event)"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Selecting Specific Values</ion-label>
+      <ion-datetime minuteValues="0,15,30,45" dayValues="5,10,15,20,25,30"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
