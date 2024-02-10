@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonDatetime } from '@ionic/angular';
 
 @Component({
   selector: 'app-date-time',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class DateTimePage implements OnInit {
   public birthDate: Date = new Date();
   public max: Date = new Date(this.birthDate.getTime() + (24 * 60 * 60 * 1000));
+  @ViewChild("datetime") element!: IonDatetime;
 
   constructor() { }
 
@@ -18,6 +20,12 @@ export class DateTimePage implements OnInit {
 
   changeDate(event: any) {
     console.log(event.detail.value);
+  }
+
+  onChangeCustom() {
+    this.element.confirm(true)
+    console.log(this.element.value)
+    console.log(this.element.confirm())
   }
 
 }

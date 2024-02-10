@@ -22,6 +22,27 @@
       <ion-label>Selecting Specific Values</ion-label>
       <ion-datetime minuteValues="0,15,30,45" dayValues="5,10,15,20,25,30"></ion-datetime>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Custom Options</ion-label>
+      <ion-datetime [showDefaultButtons]="true"></ion-datetime>    
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Custom Options 2</ion-label>    
+      <ion-datetime presentation="month-year"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Custom Options 3</ion-label>    
+      <ion-datetime #datetime>
+        <ion-buttons slot="buttons">
+          <ion-button color="danger" (click)="onChangeCustom()">Reset</ion-button>
+          <ion-button color="primary" (click)="datetime.cancel()">Never mind</ion-button>
+          <ion-button color="primary" (click)="datetime.confirm()">All Set</ion-button>
+        </ion-buttons>
+      </ion-datetime>
+    </ion-item>
   </ion-list>
 
 
